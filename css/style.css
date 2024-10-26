@@ -90,6 +90,7 @@ body {
 }
 
 .form {
+    justify-content: center;
     width: min(600px, 50%);
     background: var(--white);
     position: relative;
@@ -149,6 +150,15 @@ input::placeholder {
 #sign-up-btn:hover,
 #login-btn:hover {
     background: var(--dark-primary);
+}
+
+.acct p{
+    display: flex;
+    gap: .3rem;
+}
+
+.acct a{
+    color: var(--primary);
 }
 
 @media only screen and (max-width: 1100px) {
