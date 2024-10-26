@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #00B98E;
+    --dark-primary: #044738;
+    --secondary: #FF6922;
+    --light: #EFFDF5;
+    --dark: #0E2E50;
+    --black: #000;
+    --white: #fff;
+
+    /* Fonts */
+    --ff-poppins: "Poppins", sans-serif;
+    --ff-roboto: "Roboto", sans-serif;
+}
+
+body {
+    font-family: var(--ff-poppins);
+}
+
+.navbar {
+    width: 100vw;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.logo {
+    font-family: var(--ff-poppins);
+    font-size: 1.5rem;
+    font-weight: 700;
+    user-select: none;
+
+    /* border: #FF6922 solid 1px; */
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-link a {
+    transition: 0.7s ease;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.nav-link a:hover {
+    color: var(--primary);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    /* color: var(--black); */
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 1100px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg); 
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100px;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--black);
+        width: 100%;
+        transition: 0.3s;
+        text-align: left;
+    }
+
+    .nav-link {
+        margin: 1rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+}
+
